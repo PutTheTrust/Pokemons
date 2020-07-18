@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import Header from "./components/ui/Header";
+import PokemonGrid from "./components/pokemons/PokemonGrid";
+// import Search from './components/ui/Search'
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [pokemon, setPokemon] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      setIsLoading(true);
+      const result = await axios(`https://pokeapi.co/api/v2/pokemon?limit=151`);
+
+      //console.log(result.data.results);
+
+      setPokemon(result.data.results);
+      setIsLoading(false);
+    };
+
+    fetchItems();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      {/* <Search getQuery={(q) => setQuery(q)} /> */}
+      <PokemonGrid isLoading={isLoading} pokemon={pokemon} />
     </div>
   );
-}
+};
 
 export default App;
