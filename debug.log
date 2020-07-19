@@ -162,3 +162,8 @@
 [0715/163841.890:WARNING:pe_image_reader.cc(340)] could not read dos header from C:\WINDOWS\SYSTEM32\CRYPTBASE.DLL
 [0715/163841.937:ERROR:process_memory_win.cc(73)] ReadMemory at 0x7ff942465fe8 of 8 bytes failed: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
 [0715/163841.945:ERROR:process_snapshot_win.cc(333)] failed to read target address
+[0718/163336.347:WARNING:minidump_to_upload_parameters.cc(36)] duplicate key guid, discarding value e5d57eb9-4c08-454c-8316-7e06f9071a03
+[0718/164422.172:WARNING:minidump_to_upload_parameters.cc(36)] duplicate key guid, discarding value e5d57eb9-4c08-454c-8316-7e06f9071a03
+[0718/164507.093:WARNING:minidump_to_upload_parameters.cc(36)] duplicate key guid, discarding value e5d57eb9-4c08-454c-8316-7e06f9071a03
+[0718/164511.374:WARNING:minidump_to_upload_parameters.cc(36)] duplicate key guid, discarding value e5d57eb9-4c08-454c-8316-7e06f9071a03
+[0718/164514.637:WARNING:minidump_to_upload_parameters.cc(36)] duplicate key guid, discarding value e5d57eb9-4c08-454c-8316-7e06f9071a03

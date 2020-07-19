@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     const fetchItems = async () => {
       setIsLoading(true);
-      const result = await axios(`https://pokeapi.co/api/v2/pokemon?limit=151`);
+      const result = await axios(`https://pokeapi.co/api/v2/pokemon`);
 
       //console.log(result.data.results);
 
@@ -21,7 +21,7 @@ const App = () => {
     };
 
     fetchItems();
-  }, []);
+  }, [pokemon.name]);
 
   return (
     <div className="container">

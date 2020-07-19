@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import Spinner from "../ui/Spinner";
+
 const PokemonItem = ({ pokemon }) => {
   const [pokemons, setPokemons] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +25,7 @@ const PokemonItem = ({ pokemon }) => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   } else {
     return (
       <div className="card">
@@ -38,7 +40,7 @@ const PokemonItem = ({ pokemon }) => {
             <h1>{pokemons.name}</h1>
             <ul>
               <li>
-                <strong>Pokemon Name:</strong> {pokemon.name}
+                <strong>Pokemon Name:</strong> {pokemons.name}
               </li>
               <li>
                 <strong>
